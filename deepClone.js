@@ -29,6 +29,10 @@ const obj = {
   },
 };
 
+// [['a',10],['b',{c:20}]]
+// [['a',10],['b',{c:20})]];
+
+
 const arrObj = Object.entries(obj);
 
 console.log(arrObj);
