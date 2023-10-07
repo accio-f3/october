@@ -5,6 +5,11 @@ const deepClone = (obj) => {
   // 1st step is condition
   if (type !== "object" || !obj) return obj;
 
+  //   1st B step
+  if (Array.isArray(obj)) {
+    return obj.map((item) => deepClone(item));
+  }
+
   //   2nd step is converting my Object into an Array
   let arrObj = Object.entries(obj);
   // 3rd step is converting array into deepCloneArray
@@ -21,7 +26,6 @@ const deepClone = (obj) => {
 
 // console.log(Object.entries(object1));
 
-
 const obj = {
   a: 10,
   b: {
@@ -32,9 +36,9 @@ const obj = {
 // [['a',10],['b',{c:20}]]
 // [['a',10],['b',{c:20})]];
 
-
 const arrObj = Object.entries(obj);
 
 console.log(arrObj);
 
 console.log(Object.fromEntries(arrObj));
+
