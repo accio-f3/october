@@ -32,8 +32,8 @@ let obj2 = {
   },
 };
 
-function test(){
-    console.log(this);
-}
+const test = () => {
+  console.log(this);
+};
 
 test.call(obj2.obj3);
