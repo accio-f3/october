@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/API/structuredClone
+
 const deepClone = (obj) => {
   const type = typeof obj;
   //   this if condition should Allow only objects
