@@ -8,20 +8,23 @@ delete Array.prototype.map;
 // here we created our sasta map method
 Array.prototype.map = function (callBackFn) {
   const result = [];
-  // this is same as arr
-  for (let i = 0; i < this.length; i++) {
-    result.push(callBackFn(this[i], i, this));
+//   this[i]
+  for (let index = 0; index < this.length; index++) {
+    result.push(callBackFn(this[index], index));
   }
-
   return result;
 };
 
-let arr = [1, 2, 3];
+let arr2 = [1, 2, 3];
 
-const res = arr.map((item) => {
-  console.log(item);
-  return 5;
+const res = arr2.map((item, i) => {
+  return item * 2;
 });
+
+let arr1 = [567,567,3];
+
+const res2 = arr1.map((item) => item);
+console.log(res2);
 
 console.log(res);
 
@@ -32,9 +35,9 @@ console.log(res);
 // if fn is a normal fn then this key word
 // refers to anyThing;
 
-
 // filter
 // reduce
 // call, bind & apply
 // array flat
+
 
