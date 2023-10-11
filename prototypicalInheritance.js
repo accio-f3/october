@@ -1,5 +1,8 @@
 let obj1 = {
   nam: "parvez",
+  getDetails() {
+    console.log(`Hi I am ${this.nam} and I am from ${this.city}`);
+  },
 };
 
 let obj2 = {
