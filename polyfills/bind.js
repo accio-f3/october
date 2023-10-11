@@ -3,7 +3,7 @@ delete Function.prototype.bind;
 Function.prototype.bind = function (objContext, ...fixedArgs) {
     const oldFn = this;
     const newFn = function(...nonFixedArgs){
-        return oldFn.call(objContext,...fixedArgs,nonFixedArgs);
+        return oldFn.call(objContext, ...fixedArgs, ...nonFixedArgs);
     }
     return newFn;
 };
