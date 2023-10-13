@@ -1,11 +1,16 @@
+// bind is just a syntax sugar over
+// function.call
 delete Function.prototype.bind;
 
-Function.prototype.bind = function (objContext, ...fixedArgs) {
-    const oldFn = this;
-    const newFn = function(...nonFixedArgs){
-        return oldFn.call(objContext, ...fixedArgs, ...nonFixedArgs);
-    }
-    return newFn;
+Function.prototype.bind = function (objectContext, ...fixedArgs) {
+  const oldFn = this; // this stay constant for 
+  // a particular bind
+  // only this function will be invoked every time
+  return function (...nonFixedArgs) {
+    return oldFn.call(objectContext, ...fixedArgs, ...nonFixedArgs);
+    // what is the value of this key word here ???
+    // this will change every time
+  };
 };
 
 let obj = {
@@ -13,26 +18,27 @@ let obj = {
   b: 20,
 };
 
-function sum(a, b) {
+function sum(arg1, arg2) {
   console.log(this);
-  return a + b;
+  return arg1 + arg2;
 }
-// no args are fixed
-const sum2 = sum.bind(obj);
-// bind is syntactical sugar over sum.call
 
-sum2(10,20); // sum.call(obj,10,20);
+// sum.call(obj,4,5,1,2);
 
-console.log(obj);
+// // console.log(sum(1, 2));
 
+// // bind return me a function which eventually
+// // runs sum.call(obj,args) internally
 
-// function old(...args){
-//     console.log(args);
-//     return 'hello';
-// }
+// console.log(sum.call(obj));
 
-// function newFn(...args){
-//     return old(...args);
-// }
+const newSum = sum.bind(obj,4,5); // newSun function will have
+// oldFn through ???
 
-// console.log(newFn(1,2,3));
+console.log(newSum(1,2)); // console.log(sum.call(obj))
+
+// console.log(obj);
+
+// sum.call(obj);
+
+// newSum(args);
