@@ -22,4 +22,21 @@ function myFlat(array, depth = 1) {
     return result;
 }
 
-console.log(myFlat(arr));
+// function myFlat(array) {
+//     const result = [];
+//     array.forEach((element)=>{
+//         // depth is depth of array, got nothing to do with
+//         // element
+//         if (Array.isArray(element)) {
+//           // [3, 4, 5] -> [3,4,5]
+//           // [6, 7, [8, 9]] -> [6,7,8,9]
+//           const miniAns = myFlat(element);
+//           result.push(...miniAns);
+//         } else {
+//           result.push(element);
+//         }
+//     })
+//     return result;
+// }
+
+console.log(myFlat(arr,2));
