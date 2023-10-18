@@ -55,3 +55,10 @@ console.log(customer2);
 
 // for a child Class (inherting from any other class)
 // SavingsAccount.__proto__ will be BankAccount Class
+
+
+// let's suppose savings account is inherting from
+// bank account
+// 
+// so any instance of savings account can access
+// methods of bank account but vice versa is not true
