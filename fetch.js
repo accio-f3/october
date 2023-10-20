@@ -17,9 +17,8 @@ fetch(url) // fetch(URL) is a promise just like p1
     // how can we convert to UI it
     // into browser readable that is basically
     // JSON
-    const dataPromise = responseObj.json();
-    console.log(dataPromise);
-    return dataPromise;
+    console.log(responseObj.json());
+    return responseObj.json();
     // return data.json();
   })
   .then((result) => { // result is JSON
