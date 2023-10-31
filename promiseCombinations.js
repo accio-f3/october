@@ -70,3 +70,5 @@ Promise.allSettled([p1, p2, p3])
 // if all promise are failing it will give you AggregateError: All promises were rejected
 
 // promise.race -> it will give info of first promise from pending to settled.
+
+// debouncing and throttling
