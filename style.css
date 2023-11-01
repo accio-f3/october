@@ -1,0 +1,22 @@
+#grandParent{
+    border: 1px solid;
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+}
+
+#parent{
+    border: 1px solid;
+    margin: 75px;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+
+#child{
+    border: 1px solid;
+    margin: 50px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
