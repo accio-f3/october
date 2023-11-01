@@ -10,6 +10,8 @@ const child = document.getElementById("child");
 // 3rd is true/ false
 // by default 3rd arg is false
 
+// true -> trickle down
+// false -> bubbling up (default behav)
 
 grandParent.addEventListener("click", (event) => {
     event.stopPropagation();
